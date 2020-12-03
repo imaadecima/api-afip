@@ -1,0 +1,31 @@
+{
+  "name": "backend-afip",
+  "version": "1.0.0",
+  "description": "API to WS AFIP",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rimraf public",
+    "transpile": "babel ./src --out-dir public --copy-files",
+    "build": "npm-run-all clean transpile",
+    "server": "node ./public/main.js",
+    "prod": "SET NODE_ENV=production && npm-run-all build server",
+    "dev": "SET NODE_ENV=development && npm-run-all build server",
+    "watch:dev": "nodemon",
+    "start": "npm run prod"
+  },
+  "author": "Imanol Decima",
+  "license": "ISC",
+  "dependencies": {
+    "@afipsdk/afip.js": "^0.6.3",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  }
+}

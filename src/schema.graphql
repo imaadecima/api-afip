@@ -1,0 +1,15 @@
+type Query {
+  Hello: String!
+  getAliquotTypes: [AliquotTypes!]!
+}
+
+type Mutation {
+  signUp: String!
+}
+
+type AliquotTypes {
+  Id: Int!
+  Desc: String!
+  FchDesde: String!
+  FchHasta: String!
+}
